@@ -1,0 +1,187 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+main,
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section,
+details,
+summary {
+    display: block;
+}
+
+// box-sizing is more consistent when inherited from a parent element
+html {
+    box-sizing: border-box;
+}
+
+// here the box-sizing is inherited from html to be used in *, *::before, *::after;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// psa: height:auto might mess up if you do not have full control over the images
+// should this mess it up simply comment this out
+img,
+object,
+embed {
+    max-width: 100%;
+    height: auto;
+}
+
+// forces vertical scrollbar to prevent jumpy scrolling
+html {
+    overflow-y: scroll;
+}
+
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: "";
+    content: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+}
+
+// table defaults
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    font-weight: bold;
+    vertical-align: bottom;
+}
+
+td {
+    font-weight: normal;
+    vertical-align: top;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+pre {
+    white-space: pre; // used for CSS2
+    white-space: pre-wrap; //used for CSS2.1
+    white-space: pre-line; //used for CSS3
+    word-wrap: break-word; //used for IE
+}
+
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+}
+
+.ie7 input[type="checkbox"] {
+    vertical-align: baseline;
+}
+.ie6 input[type="checkbox"] {
+    vertical-align: text-bottom;
+}
+
+select,
+input,
+textarea {
+    font: 99% sans-serif;
+}
+
+small {
+    font-size: 85%;
+}
+
+strong {
+    font-weight: bold;
+}
+
+// make sure that superscripts and subscripts do not mess with line height
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+
+.clickable,
+label,
+input[type="button"],
+input[type="submit"],
+input[type="file"],
+button {
+    cursor: pointer;
+}
+
+// make buttons play nice with internet explorer 7 (disgusting and yucky and poopoofart)
+button,
+input[type="button"] {
+    width: auto;
+    overflow: visible;
+}
+
+.ie7 img {
+    -ms-interpolation-mode: bicubic;
+}
+
+// container collapse fix
+// if you use floats, sometimes the container won't appear since there's nothing inside of it
+
+.clearfix::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
