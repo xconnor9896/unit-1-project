@@ -1,8 +1,12 @@
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
 
 function App() {
+
+  const apiKey = process.env.REACT_APP_TASTEDIVE_API_KEY
+  console.log(apiKey);
+
   return (
-    <h1>This is a placeholder</h1>
+   <div>placeholder</div>
   );
 }
 
