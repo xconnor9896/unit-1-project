@@ -1,13 +1,13 @@
 // import Home from './Pages/Home';
+import { useEntryContext } from './util/context';
 
 function App() {
 
-  const apiKey = process.env.REACT_APP_TASTEDIVE_API_KEY
-  console.log(apiKey);
-
+  const { query, setQuery, mediaType, setMediaType, entry, error, loading } = useEntryContext();
+  console.log(entry);
   return (
-   <div>placeholder</div>
-  );
+    <div>empty</div>
+  )
 }
 
 export default App;

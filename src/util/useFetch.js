@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-const API_ENDPOINT = `http://www.tastedive.com/api/similar&k=${process.env.REACT_APP_TASTEDIVE_API_KEY}`;
+const API_ENDPOINT = `https:/ws.audioscrobbler.com/2.0/api_key=${process.env.REACT_APP_LASTFM_API_KEY}&format=json`;
 
 
 export const useFetch = (searchQuery) => {
@@ -25,6 +25,11 @@ export const useFetch = (searchQuery) => {
             console.error(error);
         }
     }
-}
+    useEffect(() => {
+        console.log(`${API_ENDPOINT}${searchQuery}`);
+        fetchEntry(`${API_ENDPOINT}${searchQuery}`);
+    }, [searchQuery])
 
-export default useFetch
+    return {loading, error, entry };
+    
+}

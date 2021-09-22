@@ -1,15 +1,14 @@
 import React, { useState, useContext } from 'react';
-import {useFetch} from './useFetch';
+import { useFetch } from './useFetch';
 
 const entryContext = React.createContext();
 
-export const entryProvider = ({children}) => {
-    const [query, setQuery] = useState("Returnal");
-    const [mediaType, setMediaType] = useState('game')
-    const {entry, error, loading } = useFetch(`&q=${query}&type=${mediaType}`);
+export const EntryProvider = ({ children }) => {
+    const [query, setQuery] = useState("");
+    const { entry, error, loading } = useFetch(``);
 
     return (
-        <entryContext.Provider value={{query, setQuery, mediaType, setMediaType, entry, error, loading}}>
+        <entryContext.Provider value={{ query, setQuery,  entry, error, loading }}>
             {children}
         </entryContext.Provider>
     )
