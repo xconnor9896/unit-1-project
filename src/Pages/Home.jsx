@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMusicContext } from "../util/context";
 import { Switch, Route } from "react-router-dom";
-import Album from "./Album";
 import { Link } from "react-router-dom";
 
 const Home = () => {

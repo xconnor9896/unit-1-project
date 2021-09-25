@@ -2,7 +2,7 @@ import React from 'react'
 import { useMusicContext } from '../util/context'
 
 const Search = () => {
-    const { artist, setArtist, submitArtistName } =
+    const { setArtist } =
         useMusicContext();
     return (
         <div>

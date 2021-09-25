@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
 
-const API_ENDPOINT = `https://ws.audioscrobbler.com/2.0/?api_key=${process.env.REACT_APP_MUSIC_API_KEY}&format=json`;
+const API_ENDPOINT = `https://ws.audioscrobbler.com/2.0/?api_key=b4120c7c69aaeb5e075ee2d4cd008ec7&format=json`;
 
 const MusicContext = React.createContext();
 
 export const MusicProvider = ({ children }) => {
 
-  const [artist, setArtist] = useState('joji');
+  const [artist, setArtist] = useState('porter robinson');
 
   //ARTIST:
   const [artistTopAlbums, setArtistTopAlbums] = useState([]);
